@@ -2,12 +2,10 @@ import Magician from '../magician.js';
 
 describe('Magician', () => {
   test('should create a mage character with the given name', () => {
-    const mage = new Magician('Gandalf');
-    expect(mage.name).toBe('Gandalf');
-    expect(mage.type).toBe('Magician');
-    expect(mage.health).toBe(100);
-    expect(mage.level).toBe(1);
-    expect(mage.attack).toBe(10);
-    expect(mage.defence).toBe(40);
+    const magician = new Magician('Gandalf');
+    const correct = {
+      name: 'Gandalf', type: 'Magician', level: 1, health: 100, defence: 40, attack: 10
+    };
+    expect(magician).toEqual(correct);
   });
 });

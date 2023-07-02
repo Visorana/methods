@@ -3,10 +3,10 @@ import Character from '../character.js';
 describe('Character', () => {
   it('should create a character with the given name and type', () => {
     const character = new Character('John', 'Bowman');
-    expect(character.name).toBe('John');
-    expect(character.type).toBe('Bowman');
-    expect(character.health).toBe(100);
-    expect(character.level).toBe(1);
+    const correct = {
+      name: 'John', type: 'Bowman', level: 1, health: 100
+    };
+    expect(character).toEqual(correct);
   });
 
   it('should throw an error when name is invalid', () => {

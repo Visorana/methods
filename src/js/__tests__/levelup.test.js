@@ -7,17 +7,12 @@ describe('Bowman', () => {
     bowman = new Bowman('Legolas');
   });
 
-  test('should increase level by 1, and increase attack and defense by 20% when calling levelUp method', () => {
+  test('should increase level by 1, reset health to 100 and increase attack and defense by 20% when calling levelUp method', () => {
     bowman.levelUp();
-    expect(bowman.level).toBe(2);
-    expect(bowman.attack).toBe(30);
-    expect(bowman.defence).toBe(30);
-  });
-
-  test('should reset health to 100 when calling levelUp method', () => {
-    bowman.health = 50;
-    bowman.levelUp();
-    expect(bowman.health).toBe(100);
+    const correct = {
+      name: 'Legolas', type: 'Bowman', level: 2, health: 100, defence: 30, attack: 30
+    }
+    expect(bowman).toEqual(correct);
   });
 
   test('should throw an error when trying to level up a deceased character', () => {
